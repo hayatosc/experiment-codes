@@ -11,13 +11,13 @@ def func(x, a, b):
 
 # データセットの設定
 n = 11
-x = [1.5, 2.5, 2.5, 3.5, 3.5, 5, 5, 10, 10, 20, 20]
+x = [0.3, 0.5, 0.5, 0.7, 0.7, 1, 1, 2, 2, 4, 4]
 y = [0.00151, 0.00194, 0.00166, 0.00196, 0.00206, 0.00196, 0.00201, 0.00362, 0.00367, 0.00387, 0.00417]
 
 # カーブフィット
 popt, pcov = curve_fit(func, x, y)
 
-x_curveplot = np.linspace(np.min(x) - 1, np.max(x) + 0.5, 1000)
+x_curveplot = np.linspace(np.min(x) - 1, np.max(x) + 0.2, 1000)
 y_curveplot = func(x_curveplot, *popt)
 
 
@@ -26,7 +26,7 @@ fig = plt.figure()
 ax1 = fig.add_subplot(111)
 ax1.scatter(x, y) # scatter: 散布図
 ax1.plot(x_curveplot, y_curveplot, color='red', linestyle='dashed') # plot: 折れ線グラフ
-plt.xlim(0, np.max(x) + 1)
+plt.xlim(0, np.max(x) + 0.4)
 plt.ylim(0, np.max(y) + 0.0010)
 
 plt.title('Michaelis-Mentenプロット')
