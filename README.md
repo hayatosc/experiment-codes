@@ -1,2 +1,2 @@
-# laboratory-codes
-実験で使用したコード類
+# experiment-codes
+実験の解析で使用したコード類
