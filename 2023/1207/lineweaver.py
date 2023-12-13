@@ -11,7 +11,7 @@ def func(x, a, b):
 
 # データセットの設定
 n = 11
-x_origin = [1.5, 2.5, 2.5, 3.5, 3.5, 5, 5, 10, 10, 20, 20]
+x_origin = [0.3, 0.5, 0.5, 0.7, 0.7, 1, 1, 2, 2, 4, 4]
 y_origin = [0.00151, 0.00194, 0.00166, 0.00196, 0.00206, 0.00196, 0.00201, 0.00362, 0.00367, 0.00387, 0.00417]
 
 x = np.reciprocal(x_origin)
@@ -20,7 +20,7 @@ y = np.reciprocal(y_origin)
 # カーブフィット
 popt, pcov = curve_fit(func, x, y)
 
-x_curveplot = np.linspace(-0.5, 1, 1000)
+x_curveplot = np.linspace(-2.5, 3.5, 1000)
 y_curveplot = func(x_curveplot, *popt)
 
 
